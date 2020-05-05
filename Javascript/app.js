@@ -10,7 +10,6 @@ var seattle = {
   maxCustomer: 65,
   avgCookiePerCustomer: 6.3,
   cookieSales: [],
-  // totalCookies: [],
   randomCustomer: function() {
     return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer;
   },
@@ -54,8 +53,6 @@ seattle.render();
 //   }
 //   }
 // };
-
-// console.log(seattle.randomCustomer[i]);
 
 
 // generateRandomCustPerHour: function() {
