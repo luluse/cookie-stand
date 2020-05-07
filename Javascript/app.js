@@ -3,6 +3,8 @@
 var parentElement = document.getElementById('table');
 var hoursOfOperation = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 var allStores = [];
+var form = document.getElementById('form');
+var allPeople = [];
 
 function Store(name, minCustomer, maxCustomer, avgCookiePerCustomer){
   this.name = name;
@@ -13,6 +15,7 @@ function Store(name, minCustomer, maxCustomer, avgCookiePerCustomer){
   this.cookieSalesPerHour = [];
   this.totalCookieForTheDay = 0;
   allStores.push(this);
+  allPeople.push(this);
 }
 
 Store.prototype.getRandomNumber = function() {
@@ -62,6 +65,16 @@ Store.prototype.render = function() {
   parentElement.appendChild(tableRow);
 };
 
+function handleFormSubmit(event){
+  event.preventDefault();
+  var name = event.target.name.value;
+  var minCustomer = event.target.minCustomer.value;
+  var maxCustomer = event.target.maxCustomer.value;
+  var avgCookiePerCustomer = event.target.avgCookiePerCustomer.value;
+
+  new Store(name, minCustomer, maxCustomer, avgCookiePerCustomer);
+}
+
 
 function tableHeader(){
   //  hours header
@@ -89,7 +102,7 @@ function renderFootRow() {
   var totalOfAllTotals = 0;
 
   var tableRow = document.createElement('tr');
-  var tableData = document.createElement('td');
+  var tableData = document.createElement('th');
   tableData.textContent = 'Hourly Total';
   tableRow.appendChild(tableData);
 
@@ -128,7 +141,4 @@ lima.render();
 
 renderFootRow();
 
-// function from MDN Math.random
-// function getRandomNumber(min, max) {
-//   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
-//}
+form.addEventListener('submit', handleFormSubmit);
