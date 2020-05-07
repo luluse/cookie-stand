@@ -87,10 +87,12 @@ function tableHeader(){
   tableRow.appendChild(tableHeader2);
   parentElement.appendChild(tableRow);
 }
+
+
+
 tableHeader();
 
 var seattle = new Location ('Seattle', 23, 65, 6.3);
-
 var tokyo = new Location ('Tokyo', 3, 24, 1.2);
 var dubai = new Location ('Dubai', 11, 38, 3.7);
 var paris = new Location ('Paris', 20, 38, 2.3);
