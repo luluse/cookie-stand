@@ -2,13 +2,18 @@
 <html>
   <head>
     <title>Sales</title>
+    <link href="css/reset.css" type="text/css" rel="stylesheet" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
   </head>
+
   <body>
-    <header>Salmon cookies
-      <a href="index.html">Home page</a>
+    <header>
+      <a href="index.html"><img id="logoSalmon" src="/images/salmon.png" alt="A Salmon" title="Home page" /></a>
+      <h2>Fresh baked cookies and Seattle's best coffee</h2>
     </header>
+
     <main>
-      <section>
+      <!-- <section>
         <ul id="seattle"></ul>
       </section>
       <section>
@@ -22,16 +27,42 @@
       </section>
       <section>
         <ul id="lima"></ul>
-      </section>
+      </section> -->
+
       <table>
         <tbody id="table"></tbody>
       </table>
 
       <form>
-        
+        <fieldset>
+          <h3>Enter a new location to generate the average number of cookies needed per day</h3>
+          <label>Store Loction
+            <input type="text" name="store" value="" />
+          </label></br>
+          <label>Minimun customer per hour
+            <input type="number" name="minCustomer" value="minCustomer" min="0" />
+          </label></br>
+          <label>Maximum customer per hour
+            <input type="number" name="maxCustomer" value="maxCustomer" min="0" />
+          </label></br>
+          <label>Average cookies sold per customer
+            <input type="number" name="avgCookie" value="avgCookie" min="0" />
+          </label></br>
+          <label>
+            <input id="submit" type="submit" name="submit" value="Submit" />
+          </label>
+        </fieldset>
       </form>
     </main>
-    <footer></footer>
+
+    <footer>
+      <ul>
+        <li>About Us</li>
+        <li><a href="mailto:pat@patssalmoncookies.com">Contact us</a></li>
+        <li><a href="index.html">Home page</a> </li>
+      </ul>
+      
+    </footer>
     <script src="Javascript/app.js"></script>
   </body>
 </html>
