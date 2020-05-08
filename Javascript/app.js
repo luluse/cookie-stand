@@ -68,13 +68,14 @@ Store.prototype.render = function() {
 function handleFormSubmit(event){
   event.preventDefault();
   var name = event.target.name.value;
-  var minCustomer = event.target.minCustomer.value;
-  var maxCustomer = event.target.maxCustomer.value;
-  var avgCookiePerCustomer = event.target.avgCookiePerCustomer.value;
+  var minCustomer = parseInt(event.target.minCustomer.value);
+  var maxCustomer = parseInt(event.target.maxCustomer.value);
+  var avgCookiePerCustomer = parseInt(event.target.avgCookiePerCustomer.value);
 
-  new Store(name, minCustomer, maxCustomer, avgCookiePerCustomer);
+  var newStore = new Store(name, minCustomer, maxCustomer, avgCookiePerCustomer);
+  newStore.render();
+
 }
-
 
 function tableHeader(){
   //  hours header
@@ -98,7 +99,6 @@ function tableHeader(){
 
 
 function renderFootRow() {
-  console.log('we have entered the function');
   var totalOfAllTotals = 0;
 
   var tableRow = document.createElement('tr');
@@ -138,6 +138,7 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+
 
 renderFootRow();
 

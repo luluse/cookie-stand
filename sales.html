@@ -37,16 +37,16 @@
         <fieldset>
           <h3>Enter a new location to generate the average number of cookies needed per day</h3>
           <label>Store Loction
-            <input type="text" name="store" value="" />
+            <input type="text" name="name" required="required" />
           </label></br>
           <label>Minimun customer per hour
-            <input type="number" name="minCustomer" value="minCustomer" min="0" />
+            <input type="number" name="minCustomer" min="0" required="required"  />
           </label></br>
           <label>Maximum customer per hour
-            <input type="number" name="maxCustomer" value="maxCustomer" min="0" />
+            <input type="number" name="maxCustomer" min="0" required="required"  />
           </label></br>
           <label>Average cookies sold per customer
-            <input type="number" name="avgCookiePerCustomer" value="avgCookiePerCustomer" min="0" />
+            <input type="number" name="avgCookiePerCustomer" min="0" required="required" />
           </label></br>
           <label>
             <input id="submit" type="submit" name="submit" value="Submit" />
