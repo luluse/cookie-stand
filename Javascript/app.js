@@ -139,7 +139,8 @@ dubai.render();
 paris.render();
 lima.render();
 
+form.addEventListener('submit', handleFormSubmit);
 
 renderFootRow();
 
-form.addEventListener('submit', handleFormSubmit);
+
